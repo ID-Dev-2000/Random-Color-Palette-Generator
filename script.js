@@ -16,9 +16,6 @@ async function fetchImages() {
         alert("API is probably on cooldown")
     }else{
     let fetchedDataAsJSON = await fetchedData.json()
-    console.log(await fetchedDataAsJSON)
-    console.log(await fetchedDataAsJSON.count)
-    //
     colorImage.src = fetchedDataAsJSON.image.bare
     imageHex1.innerHTML = fetchedDataAsJSON['colors']['0']['hex']['value']
     imageHex2.innerHTML = fetchedDataAsJSON['colors']['1']['hex']['value']
