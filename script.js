@@ -5,8 +5,11 @@ let imageHex3 = document.getElementById('li3')
 let imageHex4 = document.getElementById('li4')
 let imageHex5 = document.getElementById('li5')
 let imageHex6 = document.getElementById('li6')
+let colorItemParent = document.getElementById('colorItemParent')
+let selectColor = document.getElementById('selectColor')
 
 async function fetchImages() {
+    colorItemParent.hidden = false
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
     let fetchedData = await fetch(`https://www.thecolorapi.com/scheme?hex=${randomColor}&mode=triad&count=6`, {
         headers: {"Accept" : "application/json"},
@@ -27,3 +30,5 @@ async function fetchImages() {
         imageHex6.innerHTML = fetchedDataAsJSON['colors']['5']['hex']['value']
     }
 }
+
+selectColor.addEventListener('click', fetchImages)
