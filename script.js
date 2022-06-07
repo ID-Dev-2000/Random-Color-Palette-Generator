@@ -21,7 +21,6 @@ async function fetchImages() {
         fetchImages() // re-calls function if value display error is true
     } else {
         colorImage.src = fetchedDataAsJSON.image.bare
-        console.log(fetchedDataAsJSON)
         imageHex1.innerHTML = fetchedDataAsJSON['colors']['0']['hex']['value']
         imageHex2.innerHTML = fetchedDataAsJSON['colors']['1']['hex']['value']
         imageHex3.innerHTML = fetchedDataAsJSON['colors']['2']['hex']['value']
